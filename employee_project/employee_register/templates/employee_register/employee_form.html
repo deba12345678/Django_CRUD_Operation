@@ -1,0 +1,13 @@
+<!-- department_list.html -->
+{% extends 'employee_register/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<form action="" method="post" autocomplete="off">
+    {% csrf_token %}
+{{form}}
+
+
+<button type="submit" class="btn btn-success"><i class="fa-regular fa-database"></i>Submit</button>
+
+</form>
+{% endblock %}

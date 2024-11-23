@@ -1,0 +1,32 @@
+<!-- department_list.html -->
+{% extends 'employee_register/base.html' %}
+{% block content %}
+<table class="table table-borderless">
+    <thead class="border-bottom font-weight-bold">
+        <tr>
+            <td>Full Name</td>
+            <td>Mibile</td>
+            <td>Position</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for employee in employee_list %}
+        <tr>
+            <td>{{employee.fullname}}</td>
+            <td>{{employee.mobile}}</td>
+            <td>{{employee.position}}</td>
+            <td>
+                <a href="{% url 'employee_update' employee.id %}" class="btn text-secondary px-0">
+                    <i class="far fa-edit fa-lg"></i>
+                </a>
+            </td>
+            <td>
+                <a href="{% url 'employee_delete' employee.id %}" class="btn-delete">
+                    <i class="fas fa-trash-alt"></i> Delete
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+{% endblock %}
